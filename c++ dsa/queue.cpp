@@ -1,5 +1,6 @@
 #include <iostream>
 #define MAX_SIZE 100 // Defines the maximum size of the queue
+using namespace std;
 
 class Queue {
 private:
@@ -27,7 +28,7 @@ public:
     // Function to add an element to the rear of the queue (enqueue)
     void enqueue(int value) {
         if (isFull()) {
-            std::cout << "Queue Overflow! Cannot enqueue " << value << std::endl;
+            cout << "Queue Overflow! Cannot enqueue " << value << endl;
             return;
         }
         if (front == -1) { // If it's the first element
@@ -35,13 +36,13 @@ public:
         }
         rear++;
         arr[rear] = value;
-        std::cout << value << " enqueued to queue." << std::endl;
+        cout << value << " enqueued to queue." << endl;
     }
 
     // Function to remove an element from the front of the queue (dequeue)
     int dequeue() {
         if (isEmpty()) {
-            std::cout << "Queue Underflow! Cannot dequeue." << std::endl;
+            cout << "Queue Underflow! Cannot dequeue." << endl;
             return -1; // Return -1 to indicate an error or empty queue
         }
         int value = arr[front];
@@ -52,7 +53,7 @@ public:
     // Function to get the front element of the queue without removing it
     int peek() {
         if (isEmpty()) {
-            std::cout << "Queue is empty." << std::endl;
+            cout << "Queue is empty." << endl;
             return -1; // Return -1 to indicate an error or empty queue
         }
         return arr[front];
@@ -61,14 +62,14 @@ public:
     // Function to display all the elements in the queue
     void display() {
         if (isEmpty()) {
-            std::cout << "Queue is empty." << std::endl;
+           cout << "Queue is empty." << endl;
             return;
         }
-        std::cout << "Queue elements are: ";
+        cout << "Queue elements are: ";
         for (int i = front; i <= rear; i++) {
-            std::cout << arr[i] << " ";
+            cout << arr[i] << " ";
         }
-        std::cout << std::endl;
+       cout << endl;
     }
 };
 
@@ -83,14 +84,14 @@ int main() {
 
     q.display(); // Display the queue
 
-    std::cout << "Front element is: " << q.peek() << std::endl;
+    cout << "Front element is: " << q.peek() << endl;
 
     int dequeued_element = q.dequeue();
-    std::cout << "Dequeued element: " << dequeued_element << std::endl;
+    cout << "Dequeued element: " << dequeued_element <<endl;
 
     q.display(); // Display the queue again after dequeue
 
-    std::cout << "New front element is: " << q.peek() << std::endl;
+    cout << "New front element is: " << q.peek() <<endl;
 
     return 0;
 }
