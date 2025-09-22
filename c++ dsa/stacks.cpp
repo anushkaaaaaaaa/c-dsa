@@ -26,4 +26,13 @@ void push(int val){
         arr[++top] = val;
         cout<< val << " pushed to stack" <<endl;
     };
+
+void pop(){
+    if(top == -1){
+        cout<< "Stack Underflow" <<endl;
+        return;
+    }
+    cout<< arr[top--] << endl;
+    };
 };
+
