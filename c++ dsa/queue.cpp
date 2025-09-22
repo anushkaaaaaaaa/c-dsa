@@ -36,15 +36,11 @@ void enqueue(int val){
     if(rear == size-1){
         cout<<"Queue is full"<<endl;
     }
-    cout<<arr[rear]<<endl;
-    if(front == -1 && rear == -1){
-        front = 0;
-        rear = 0;
-        arr[rear] = val;
-    }
     else{
         rear++;
     }
+    arr[rear] = val;
+    cout<< val << endl;
 }
 
     //deletion from front
