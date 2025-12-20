@@ -29,8 +29,8 @@ bool binarySearch(int arr[], int s, int e, int key) {
 
 int main(){
     int arr[6] = {2,4,6,8,10,12};
-    int key = 5;
-    bool ans = binarySearch(arr,0,5,key);
+    int key = 8;
+    bool ans = binarySearch(arr,2,8,key);
     if(ans){
         cout<<"Key is present"<<endl;
     }
