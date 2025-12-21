@@ -824,6 +824,17 @@ public:
             head = nullptr;
         delete t;
     }
+/*************  ✨ Windsurf Command 🌟  *************/
+    /// Prints the contents of the deque.
+    ///
+    /// This function prints the contents of the deque from front to back.
+    ///
+    /// @remark This function does not modify the deque.
+    ///
+    /// @return void
+    ///
+    /// @throws std::runtime_error If the deque is empty.
+
     void print()
     {
         cout << "Deque: ";
@@ -834,6 +845,8 @@ public:
             t = t->next;
         }
         cout << "\n";
+    }
+/*******  5ad25d1f-65d5-4562-b402-978f19aaf723  *******/
     }
     ~DequeLinked()
     {
