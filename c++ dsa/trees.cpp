@@ -30,12 +30,41 @@ Node* buildTree(Node* root){
     cout<<"Enter data for inserting in right of "<<data<<endl;
     root -> right = buildTree(root -> right);
     return root;
-
 }
+
+void(levelOrderTraversal(Node* root)){
+    queue<Node*> q;
+    q.push(root);
+    q.push(NULL);
+
+    while(!q.empty()){
+        Node* temp = q.front();
+        cout<< temp -> data <<" ";
+        q.pop();
+        
+        if(temp == NULL){ //purana level complete 
+            //traverse ho chuka hai
+            cout<<endl;
+            if(!q.empty()){ //queue still has some child nodes
+                q.push(NULL);
+            }
+        }
+
+        if(temp -> left != NULL){
+            q.push(temp -> left);
+        }
+        
+        if(temp -> right){
+            q.push(temp -> right);
+        }
+    }
+}
+
+
 int main(){
-    
+    //1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
     Node* root = NULL;
     root = buildTree(root);
-    
+    levelOrderTraversal(root);
     return 0;
 }
