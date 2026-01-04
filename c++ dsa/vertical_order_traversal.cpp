@@ -12,7 +12,7 @@ struct Node {
     
     Node(int val) {
         data = val;
-        left = NULL;
+        left = NULL;i
         right = NULL;
     }
 };
