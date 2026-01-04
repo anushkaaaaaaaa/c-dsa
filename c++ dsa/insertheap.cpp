@@ -51,12 +51,15 @@ void printHeap(){
 int main() {
     MaxHeap h;
     h.insert(50);
-    h.insert(55);
-    h.insert(53);
-    h.insert(52);
-    h.insert(54);
+    h.insert(30);
+    h.insert(40);
+    h.insert(10);
+    h.insert(20);
 
     h.printHeap(); // Output should reflect max-heap property
+
+    h.insert(60);
+    h.printHeap(); // Output should reflect max-heap property after inserting 60
 
     return 0;
 }
