@@ -38,100 +38,12 @@ void array_insert_delete(){
     cout << "\n";
 }
 
-// 3. Search for a number in an array
-void array_search()
-{
-    int n;
-    cout << "Enter n: ";
-    cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-    int key;
-    cout << "Enter key to search: ";
-    cin >> key;
-    int idx = -1;
-    for (int i = 0; i < n; i++)
-        if (a[i] == key)
-        {
-            idx = i;
-            break;
-        }
-    if (idx == -1)
-        cout << "Not found\n";
-    else
-        cout << "Found at index " << idx << "\n";
-}
 
-// 4. Sort an array
-void array_sorting()
-{
-    int n;
-    cout << "Enter n: ";
-    cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-    sort(a.begin(), a.end());
-    cout << "Sorted: ";
-    for (int v : a)
-        cout << v << " ";
-    cout << "\n";
-}
 
-// 5. Merge two sorted arrays
-void merge_two_sorted()
-{
-    int n, m;
-    cout << "Enter sizes n m: ";
-    cin >> n >> m;
-    vector<int> A(n), B(m);
-    cout << "Enter sorted A:\n";
-    for (int i = 0; i < n; i++)
-        cin >> A[i];
-    cout << "Enter sorted B:\n";
-    for (int i = 0; i < m; i++)
-        cin >> B[i];
-    vector<int> C;
-    C.reserve(n + m);
-    int i = 0, j = 0;
-    while (i < n && j < m)
-    {
-        if (A[i] <= B[j])
-            C.push_back(A[i++]);
-        else
-            C.push_back(B[j++]);
-    }
-    while (i < n)
-        C.push_back(A[i++]);
-    while (j < m)
-        C.push_back(B[j++]);
-    cout << "Merged: ";
-    for (int v : C)
-        cout << v << " ";
-    cout << "\n";
-}
 
-// 6. Store marks of 10 students in 5 courses (2D array)
-void store_marks_2d()
-{
-    const int students = 10, courses = 5;
-    vector<vector<int>> marks(students, vector<int>(courses));
-    cout << "Enter marks for 10 students (5 courses each):\n";
-    for (int i = 0; i < students; i++)
-    {
-        cout << "Student " << i << ": ";
-        for (int j = 0; j < courses; j++)
-            cin >> marks[i][j];
-    }
-    cout << "Displaying marks table:\n";
-    for (int i = 0; i < students; i++)
-    {
-        for (int j = 0; j < courses; j++)
-            cout << marks[i][j] << " ";
-        cout << "\n";
-    }
-}
+
+
+
 
 /* ---------- 7-10 : Singly linked list ---------- */
 struct Node{
@@ -143,28 +55,7 @@ class SinglyLinkedList{
 public:
     Node *head;
     SinglyLinkedList() : head(nullptr) {}
-    void push_back(int v){
-        Node *n = new Node(v);
-        if (!head)
-            head = n;
-        else
-        {
-            Node *t = head;
-            while (t->next)
-                t = t->next;
-            t->next = n;
-        }
-    }
-    void print(){
-        Node *t = head;
-        cout << "List: ";
-        while (t)
-        {
-            cout << t->data << " ";
-            t = t->next;
-        }
-        cout << "\n";
-    }
+
     // 8 insert node at pos and delete node by pos
     void insert_at(int pos, int val){
         Node *n = new Node(val);
